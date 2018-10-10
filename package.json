@@ -1,0 +1,26 @@
+{
+    "name": "keymaerax",
+    "displayName": "KeYmaeraX",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "mikinty",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "kyx",
+            "aliases": ["keymaerax", "kyx"],
+            "extensions": [".kyx",".kya"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "kyx",
+            "scopeName": "text.keymaerax",
+            "path": "./syntaxes/kyx.tmLanguage.json"
+        }]
+    }
+}

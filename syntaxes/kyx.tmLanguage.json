@@ -1,0 +1,57 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "keymaerax",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+      "name": "comment.kyx",
+      "begin": "\\/\\*",
+      "beginCaptures": {
+        "0": {
+          "name": "comment.begin.kyx"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "comment.end.kyx"
+        }
+      },
+      "end": "\\*\\/"
+		},
+		{
+			"match": "#?-?(0x|&)[0-9a-fA-F_]+\\b",
+			"name": "constant.numeric.hex.kyx"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.types.kyx",
+					"match": "\\b(Real|Int|Bool)\\b"
+				},
+				{
+					"name": "keyword.control.kyx",
+					"match": "\\b(ProgramVariables|(End)|Problem)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.kyx",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.kyx",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "text.keymaerax"
+}
